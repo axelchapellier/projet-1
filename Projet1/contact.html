@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="contact.css" rel="stylesheet" type="text/css" />
+    <title>Contact</title>
+    <script type="text/javascript" src="contact.js"></script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>Accueil</li>
+      <li class="crunchyroll">Crunchyroll</li>
+      <li class="wakanim">Wakanim</li>
+      <li class="adnNav">ADN</li>
+      <li>Contact Us</li>
+    </ul>
+  </nav>
+
+<section class= "nous">
+  <h1>La Dérive</h1>
+  <div class="flex-container">
+            <div class="nicolas">
+                <img src="Nicolas.jpg" alt ="Nicolas">
+                <p1>Nom: Nicolas Queudot<br>Age: 21ans<br>Ville: Auneau</p1>
+            </div>
+          <div class="axel">
+            <img src="Axel.jpg" alt="Axel">
+            <p>Nom: Axel Chapellier<br>Age: 21ans<br>Ville: Mainvillier</p>
+        </div>
+        <div class="pierre">
+            <img src="Pierre.jpg" alt ="Pierre">
+            <p2>Nom: Pierre Legeay<br>Age: 24ans<br>Ville: Prunay le Gillon</p2>
+        </div>
+        </section>
+
+
+
+
+<h2>Contact La Dérive</h2>
+<section id="contact">
+<form name="monformulaire1" action="" method="post" onSubmit="return Verification()">
+  <label for="name">Nom <span class="text-danger"></span></label><br />
+  <input type="text" name="nom" id="idNom" /><br />
+  
+  
+  
+  <label for="idEmail">Email <span class="text-danger"></span></label><br />
+  <input type="text" name="email" id="idEmail" /><br />
+  
+  
+  <label for="message">Message:</label><br />
+      <textarea id="message" name="message"></textarea>
+      <br /><br />
+      <input type="submit" value="Envoyer" />
+  
+</form>
+</section>
+  
+
+<footer>
+          <ul>
+            <li>Chapellier Axel</li>
+            <li>Legeay Pierre</li>
+            <li>Queudot Nicolas</li>
+          </ul>
+        </footer>
+
+    
+</body>
+
+</html>
+

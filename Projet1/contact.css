@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  margin: auto;
+  position: relative;
+}
+body {
+  background-color: rgba(232, 236, 227, 0.911);
+  font-family: 'Times New Roman', Times, serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+input {
+  width: 15rem;
+}
+#contact {
+  text-align: center;
+
+}
+
+img {
+  transition: 0.5s ease;
+  width: 20vw;
+  
+}
+
+
+p,
+p1,
+p2 {
+  transition: 0.5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 252, 250);
+  opacity: 0;
+  text-align: left;
+  background-color: transparent;
+  font-size: 30px;
+  
+
+}
+
+.axel:hover p, .nicolas:hover p1, .pierre:hover p2 {
+  opacity: 1;
+}
+.axel:hover img, .nicolas:hover img, .pierre:hover img{
+    opacity: 0.8;
+}
+
+p1 {
+  top: 48%;
+  left: 17%;
+}
+p2 {
+  top: 52%;
+  left: 84%;
+}
+
+.axel, .nicolas, .pierre{
+    width: fit-content;
+    
+}
+
+nav {
+  position: sticky;
+  top: 0;
+}
+
+nav,
+footer {
+  background-color: black;
+  padding: 1em 0 1em 0;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 10px 0 10px 0;
+}
+
+li {
+  text-align: center;
+  width: 20%;
+  color: white;
+}
+
+.crunchyroll {
+  color: orange;
+}
+
+.wakanim {
+  color: red;
+}
+
+.adnNav {
+  color: lightskyblue;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
