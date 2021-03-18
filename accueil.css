@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+}
+
+nav,
+footer {
+  background-color: black;
+  padding: 1vh 0;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 10px 0 10px 0;
+}
+
+li {
+  text-align: center;
+  width: 20%;
+  color: white;
+}
+
+.crunchyroll {
+  color: orange;
+}
+
+.wakanim {
+  color: red;
+}
+
+.adnNav {
+  color: lightskyblue;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.crunchy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(240, 227, 227);
+  background: radial-gradient(
+    circle,
+    rgba(240, 227, 227, 1) 4%,
+    rgba(222, 155, 19, 1) 90%
+  );
+}
+
+.waka {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(240, 227, 227);
+  background: radial-gradient(
+    circle,
+    rgba(240, 227, 227, 1) 5%,
+    rgba(222, 19, 19, 1) 91%
+  );
+}
+
+.adn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(240, 227, 227);
+  background: radial-gradient(
+    circle,
+    rgba(240, 227, 227, 1) 5%,
+    rgba(19, 197, 222, 1) 90%
+  );
+}
+
+img {
+  width: 50vw;
+  height: 50vh;
+}
