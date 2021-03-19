@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+      position: relative;
+    background: gray;
+    min-height: 100vh;
+  }
+  
+  .contenair {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40rem;
+  }
+  
+  .carousell {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    margin: 0 7vw;
+    font-size: 18px;
+  }
+  
+  
+  
+  img {
+    width: 13vw;
+    margin: 0 2vw;
+  }
+  
+  #buttonPlus {
+    position: absolute;
+    width: 2vw;
+    top: 30vh;
+    left: 42vw;
+    z-index: 2;
+  }
+  
+  #buttonMoin {
+    position: absolute;
+    width: 2vw;
+    top: 30vh;
+    left: 56vw;
+    z-index: 2;
+  }
+  
+  .synopsis{
+      width: 80vw;
+      height: auto;
+      background-color: orange;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      margin: 2vh;
+      padding: 15px;
+      border-radius: 15px;
+      margin: 0 auto;
+  }
+  
+  .synopsis p{
+      text-align: center;
+      margin-bottom: 1vh;
+  }
+  .synopsis h1{
+      margin-bottom: 1vh;
+  }
+  
+  nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    nav,
+    footer {
+      background-color: black;
+      padding: 1vh 0;
+      font-size: 20px;
+    }
+    
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 10px 0;
+    }
+    
+    li {
+      text-align: center;
+      width: 20%;
+      color: white;
+    }
+    
+    .crunchyroll {
+      color: orange;
+    }
+    
+    .wakanim {
+      color: red;
+    }
+    
+    .adnNav {
+      color: lightskyblue;
+    }
+  
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .carousell h1{
+        text-align: center;
+        margin-bottom: 1vh;
+    }
