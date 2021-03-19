@@ -4,47 +4,122 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+  background: gray;
+  min-height: 100vh;
+}
+
 .contenair {
   display: flex;
   justify-content: center;
+  width: 100%;
+  height: 63vh;
 }
 
 .carousell {
   width: 100%;
   display: flex;
+  overflow: hidden;
+  align-items: center;
+  margin: 0 7vw;
+}
+
+.carousell h1 {
+  text-align: center;
+  margin-bottom: 1vh;
+  font-size: 17px;
+  width: 88%;
+}
+
+img {
+  width: 13vw;
+  margin: 0 2vw;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+
+#buttonPlus {
+  position: absolute;
+  width: 2vw;
+  top: 30vh;
+  left: 42vw;
+  z-index: 2;
+}
+
+#buttonMoin {
+  position: absolute;
+  width: 2vw;
+  top: 30vh;
+  left: 56vw;
+  z-index: 2;
+}
+
+.synopsis {
+  width: 80vw;
+  height: auto;
+  background-color: orange;
+  display: flex;
+  flex-flow: column;
   justify-content: center;
-  flex-wrap: wrap;
+  margin: 2vh;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 0 auto;
+  font-size: 20px;
 }
 
-div {
-  width: 15rem;
-  margin: 0 10px;
+.synopsis p {
+  text-align: center;
+  margin-bottom: 1vh;
+}
+.synopsis h1 {
+  margin-bottom: 1vh;
 }
 
-#imgMoinMoin {
-  width: 15%;
-  height: 80%;
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-#imgMoin {
-  width: 18%;
-  height: 90%;
-}
-#imgPrincipal {
-  width: 250px;
-  height: 400px;
+nav,
+footer {
+  background-color: black;
+  padding: 1vh 0;
+  font-size: 20px;
 }
 
-#imgPlus {
-  width: 18%;
-  height: 90%;
+ul {
+  display: flex;
+  list-style: none;
+  padding: 10px 0;
 }
 
-#imgPlusPlus {
-  width: 15%;
-  height: 80%;
+li {
+  text-align: center;
+  width: 20%;
+  color: white;
 }
 
-#imgMoinMoin, #imgMoin, #imgPrincipal, #imgPlus, #imgPlusPlus{
-    background-size: cover;
-} 
+.crunchyroll {
+  color: orange;
+}
+
+.wakanim {
+  color: red;
+}
+
+.adnNav {
+  color: lightskyblue;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
