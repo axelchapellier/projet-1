@@ -90,20 +90,19 @@ nav {
 nav,
 footer {
   background-color: black;
-  padding: 1vh 0;
   font-size: 20px;
 }
 
 ul {
   display: flex;
   list-style: none;
-  padding: 10px 0;
 }
 
 li {
   text-align: center;
   width: 20%;
   color: white;
+  padding: 2vh 0;  cursor: pointer; 
 }
 
 .crunchyroll {
@@ -122,4 +121,25 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.accueil:hover,
+.contact:hover {
+  background-color: white;
+  color: black;
+}
+
+.crunchyroll:hover {
+  color: black;
+  background-color: orange;
+}
+
+.wakanim:hover {
+  color: black;
+  background-color: red;
+}
+
+.adnNav:hover {
+  color: black;
+  background-color: lightskyblue;
 }
