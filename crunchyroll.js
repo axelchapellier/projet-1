@@ -5,6 +5,7 @@ const anime = [
       "https://i0.wp.com/crfeaturesbiz.wpcomstaging.com/wp-content/uploads/2020/12/20_12_Dr.STONE_S2_SeasonalAssets_2x3.jpg?w=1003&ssl=1",
     synopsis:
       "Plusieurs milliers d'années après un mystérieux phénomène qui a transformé toute l'humanité en pierre, Senku, un lycéen extrêmement intelligent et animé par un esprit scientifique, se réveille. Face à ce monde figé, où toutes les civilisations se sont effondrées, il décide d'utiliser la science pour le reconstruire. Avec l'aide de son ami d'enfance, l'infatigable Taiju Ôki qui s'est lui aussi réveillé, ils vont devoir repartir de zéro. Ainsi commence une incroyable aventure pour se réapproprier des milliers d'années d'histoire de la science, de l'Âge de pierre à leurs jours…",
+    link: "",
   },
   {
     titre: "MOI, QUAND JE ME RÉINCARNE EN SLIME (SAISON 2)",
@@ -270,10 +271,6 @@ for (let i = 0; i < anime.length; i++) {
   butt.classList.add("button");
   carImage.appendChild(butt);
 
-//   const cache = document.createElement("div");
-//   cache.classList.add("cache");
-//   butt.appendChild(cache);
-
   const buttOne = document.createElement("button");
   buttOne.classList.add("buttonPlus");
   buttOne.innerHTML = "⇠";
@@ -284,9 +281,14 @@ for (let i = 0; i < anime.length; i++) {
   buttTwo.innerHTML = "⇢";
   butt.appendChild(buttTwo);
 
+  const link = document.createElement("a");
+  link.href = anime[i].link;
+  link.target = "blank";
+  carImage.appendChild(link);
+
   const carChange = document.createElement("img");
   carChange.src = anime[i].image;
-  carImage.appendChild(carChange);
+  link.appendChild(carChange);
 }
 
 let button = document.getElementsByClassName("button");
