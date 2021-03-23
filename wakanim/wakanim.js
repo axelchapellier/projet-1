@@ -165,8 +165,8 @@ const anime = [
   },
 ];
 
-let buttonMoin = document.getElementById("buttonMoin");
-let buttonPlus = document.getElementById("buttonPlus");
+let buttonMoin = document.getElementsByClassName("buttonMoin");
+let buttonPlus = document.getElementsByClassName("buttonPlus");
 
 const carousell = document.getElementById("carousell");
 let image = document.getElementsByClassName("image");
@@ -175,8 +175,6 @@ let synopsis = document.getElementById("text");
 
 let e = 0;
 let grande = 2;
-
-console.log(25);
 
 for (let i = 0; i < anime.length; i++) {
   const carImage = document.createElement("div");
@@ -187,40 +185,70 @@ for (let i = 0; i < anime.length; i++) {
   titre.innerHTML = anime[i].titre;
   carImage.appendChild(titre);
 
+  const butt = document.createElement("section");
+  butt.classList.add("button");
+  carImage.appendChild(butt);
+
+  const buttOne = document.createElement("button");
+  buttOne.classList.add("buttonPlus");
+  buttOne.innerHTML = "⇠";
+  butt.appendChild(buttOne);
+
+  const buttTwo = document.createElement("button");
+  buttTwo.classList.add("buttonMoin");
+  buttTwo.innerHTML = "⇢";
+  butt.appendChild(buttTwo);
+
+  const link = document.createElement("a");
+  link.href = anime[i].link;
+  link.target = "blank"
+  carImage.appendChild(link);
+
   const carChange = document.createElement("img");
   carChange.src = anime[i].image;
-  carImage.appendChild(carChange);
+  link.appendChild(carChange);
 }
 
-image[2].style.transform = "scale(1.4)";
+let button = document.getElementsByClassName("button");
+
+image[grande].style.transform = "scale(1.4)";
+button[grande].style.display = "flex";
 synopsis.innerHTML = anime[grande].synopsis;
 
-buttonPlus.addEventListener("click", function () {
-  if (grande > 0) {
-    e = e + 17;
-    grande--;
-    console.log(grande);
+for (let i = 0; i < button.length; i++) {
+  buttonPlus[i].addEventListener("click", function () {
+    if (grande > 0) {
+      e = e + 17;
+      grande--;
 
-    for (let i = 0; i < image.length; i++) {
-      image[i].style.transform = `translateX(${e}vw)`;
-      image[i].style.transition = "all 0.5s ease";
+      for (let i = 0; i < image.length; i++) {
+        image[i].style.transform = `translateX(${e}vw)`;
+        image[i].style.transition = "all 0.5s ease";
+      }
+
+      image[grande].style.transform = ` translateX(${e}vw) scale(1.4)`;
+      button[grande + 1].style.display = "none";
+      button[grande].style.display = "flex";
+      synopsis.innerHTML = anime[grande].synopsis;
     }
-    image[grande].style.transform = ` translateX(${e}vw) scale(1.4)`;
-    synopsis.innerHTML = anime[grande].synopsis;
-  }
-});
+  });
+}
 
-buttonMoin.addEventListener("click", function () {
-  if (grande < anime.length - 1) {
-    e = e - 17;
-    grande++;
-    console.log(grande);
+for (let i = 0; i < button.length; i++) {
+  buttonMoin[i].addEventListener("click", function () {
+    if (grande < anime.length - 1) {
+      e = e - 17;
+      grande++;
 
-    for (let i = 0; i < image.length; i++) {
-      image[i].style.transform = `translateX(${e}vw)`;
-      image[i].style.transition = "all 0.5s ease";
+      for (let i = 0; i < image.length; i++) {
+        image[i].style.transform = `translateX(${e}vw)`;
+        image[i].style.transition = "all 0.5s ease";
+      }
+
+      image[grande].style.transform = `translateX(${e}vw) scale(1.4)`;
+      button[grande - 1].style.display = "none";
+      button[grande].style.display = "flex";
+      synopsis.innerHTML = anime[grande].synopsis;
     }
-    image[grande].style.transform = `translateX(${e}vw) scale(1.4)`;
-    synopsis.innerHTML = anime[grande].synopsis;
-  }
-});
+  });
+}
