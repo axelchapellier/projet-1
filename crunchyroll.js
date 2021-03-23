@@ -224,21 +224,21 @@ const anime = [
       "Les dieux sont sur le pied de guerre pour décider de l'avenir de l'humanité. Un jeune garçon aztèque, Izel, se retrouve pris dans leur jeu dangereux. Afin de sauver les siens, il doit accomplir une tâche impossible : fermer les cinq portes des enfers. Izel n'a d'autre choix que d'accepter sa mission, mais ce n'est qu'une fois celle-ci terminée qu'il pourra également réparer une terrible tragédie. Sa quête pour devenir le champion de l'humanité sera parsemée d'espoir et de désespoir, de confiance et de trahison. Izel devra affronter ses pensées les plus sombres et décider si l'espèce humaine (avec tous ses défauts et toutes ses contradictions) vaut la peine d'être sauvée...",
   },
   {
-titre:"SHADOWVERSE",
+    titre: "SHADOWVERSE",
     image:
       "https://i1.wp.com/crfeaturesbiz.wpcomstaging.com/wp-content/uploads/2020/03/Shadowverse_2x3.png?resize=1024%2C1536&ssl=1",
     synopsis:
       "Pendant ses études à l'académie Tensei, Hiiro Ryûgasaki acquiert un mystérieux smartphone sur lequel est installé le très populaire jeu de cartes Shadowverse ! Rencontrer de nouveaux adversaires, participer à des tournois majeurs, tisser des liens avec des amis, Shadowverse entraîne Hiiro vers toutes sortes de nouvelles expériences qui lui permettent « d'évoluer »...",
   },
   {
-      titre:"OH, SUDDENLY EGYPTIAN GOD",
+    titre: "OH, SUDDENLY EGYPTIAN GOD",
     image:
       "https://i1.wp.com/crfeaturesbiz.wpcomstaging.com/wp-content/uploads/2020/12/2x3-1.jpg?w=1003&ssl=1",
     synopsis:
       "Bienvenue au temps des dieux égyptiens ! C'est ici que les fameuses divinités de l'Égypte ancienne, d'Anubis à Thot, vivent librement leur vie. Libre à quel point, vous demandez-vous ? Bastet surgit de nulle part en chantant et en dansant ; Medjed a toujours un visage de pierre ; Horus travaille à temps partiel ; Seth passe son temps à faire des farces ; Râ voyage beaucoup et rentre rarement à la maison...Tous ces dieux mignons font vraiment ce qu'ils veulent, profitant au maximum d'une vie aussi divine que décontractée.",
   },
   {
-      titre:"WITH A DOG AND A CAT, EVERY DAY IS FUN",
+    titre: "WITH A DOG AND A CAT, EVERY DAY IS FUN",
     image:
       "https://i2.wp.com/crfeaturesbiz.wpcomstaging.com/wp-content/uploads/2020/09/DO-NOT-USE-until-With-a-Dog-AND-a-Cat-Every-Day-is-Fun_2x3.png?resize=1024%2C1536&ssl=1",
     synopsis:
@@ -246,8 +246,8 @@ titre:"SHADOWVERSE",
   },
 ];
 
-let buttonMoin = document.getElementById("buttonMoin");
-let buttonPlus = document.getElementById("buttonPlus");
+let buttonMoin = document.getElementsByClassName("buttonMoin");
+let buttonPlus = document.getElementsByClassName("buttonPlus");
 
 const carousell = document.getElementById("carousell");
 let image = document.getElementsByClassName("image");
@@ -256,8 +256,6 @@ let synopsis = document.getElementById("text");
 
 let e = 0;
 let grande = 2;
-
-console.log(25);
 
 for (let i = 0; i < anime.length; i++) {
   const carImage = document.createElement("div");
@@ -268,40 +266,69 @@ for (let i = 0; i < anime.length; i++) {
   titre.innerHTML = anime[i].titre;
   carImage.appendChild(titre);
 
+  const butt = document.createElement("section");
+  butt.classList.add("button");
+  carImage.appendChild(butt);
+
+//   const cache = document.createElement("div");
+//   cache.classList.add("cache");
+//   butt.appendChild(cache);
+
+  const buttOne = document.createElement("button");
+  buttOne.classList.add("buttonPlus");
+  buttOne.innerHTML = "⇠";
+  butt.appendChild(buttOne);
+
+  const buttTwo = document.createElement("button");
+  buttTwo.classList.add("buttonMoin");
+  buttTwo.innerHTML = "⇢";
+  butt.appendChild(buttTwo);
+
   const carChange = document.createElement("img");
   carChange.src = anime[i].image;
   carImage.appendChild(carChange);
 }
 
-image[2].style.transform = "scale(1.4)";
+let button = document.getElementsByClassName("button");
+
+image[grande].style.transform = "scale(1.4)";
+button[grande].style.display = "flex";
 synopsis.innerHTML = anime[grande].synopsis;
 
-buttonPlus.addEventListener("click", function () {
-  if (grande > 0) {
-    e = e + 17;
-    grande--;
-    console.log(grande);
+for (let i = 0; i < button.length; i++) {
+  buttonPlus[i].addEventListener("click", function () {
+    if (grande > 0) {
+      e = e + 17;
+      grande--;
 
-    for (let i = 0; i < image.length; i++) {
-      image[i].style.transform = `translateX(${e}vw)`;
-      image[i].style.transition = "all 0.5s ease";
+      for (let i = 0; i < image.length; i++) {
+        image[i].style.transform = `translateX(${e}vw)`;
+        image[i].style.transition = "all 0.5s ease";
+      }
+
+      image[grande].style.transform = ` translateX(${e}vw) scale(1.4)`;
+      button[grande + 1].style.display = "none";
+      button[grande].style.display = "flex";
+      synopsis.innerHTML = anime[grande].synopsis;
     }
-    image[grande].style.transform = ` translateX(${e}vw) scale(1.4)`;
-    synopsis.innerHTML = anime[grande].synopsis;
-  }
-});
+  });
+}
 
-buttonMoin.addEventListener("click", function () {
-  if (grande < anime.length - 1) {
-    e = e - 17;
-    grande++;
-    console.log(grande);
+for (let i = 0; i < button.length; i++) {
+  buttonMoin[i].addEventListener("click", function () {
+    if (grande < anime.length - 1) {
+      e = e - 17;
+      grande++;
 
-    for (let i = 0; i < image.length; i++) {
-      image[i].style.transform = `translateX(${e}vw)`;
-      image[i].style.transition = "all 0.5s ease";
+      for (let i = 0; i < image.length; i++) {
+        image[i].style.transform = `translateX(${e}vw)`;
+        image[i].style.transition = "all 0.5s ease";
+      }
+
+      image[grande].style.transform = `translateX(${e}vw) scale(1.4)`;
+      button[grande - 1].style.display = "none";
+      button[grande].style.display = "flex";
+      synopsis.innerHTML = anime[grande].synopsis;
     }
-    image[grande].style.transform = `translateX(${e}vw) scale(1.4)`;
-    synopsis.innerHTML = anime[grande].synopsis;
-  }
-});
+  });
+}
