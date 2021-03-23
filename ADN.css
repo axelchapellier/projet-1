@@ -71,47 +71,67 @@
   }
   
   nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    
-    nav,
-    footer {
-      background-color: black;
-      padding: 1vh 0;
-      font-size: 20px;
-    }
-    
-    ul {
-      display: flex;
-      list-style: none;
-      padding: 10px 0;
-    }
-    
-    li {
-      text-align: center;
-      width: 20%;
-      color: white;
-    }
-    
-    .crunchyroll {
-      color: orange;
-    }
-    
-    .wakanim {
-      color: red;
-    }
-    
-    .adnNav {
-      color: lightskyblue;
-    }
-  
-    footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav,
+footer {
+  background-color: black;
+  font-size: 20px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  text-align: center;
+  width: 20%;
+  color: white;
+  padding: 2vh 0;  cursor: pointer; 
+}
+
+.crunchyroll {
+  color: orange;
+}
+
+.wakanim {
+  color: red;
+}
+
+.adnNav {
+  color: lightskyblue;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.accueil:hover,
+.contact:hover {
+  background-color: white;
+  color: black;
+}
+
+.crunchyroll:hover {
+  color: black;
+  background-color: orange;
+}
+
+.wakanim:hover {
+  color: black;
+  background-color: red;
+}
+
+.adnNav:hover {
+  color: black;
+  background-color: lightskyblue;
+}
 
     .carousell h1{
         text-align: center;
