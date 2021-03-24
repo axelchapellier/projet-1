@@ -97,9 +97,16 @@ const anime = [
 },
 
 ];
-
-let buttonMoin = document.getElementsByClassName("buttonMoin");
+  
+  let buttonMoin = document.getElementsByClassName("buttonMoin");
 let buttonPlus = document.getElementsByClassName("buttonPlus");
+let burger = document.getElementsByClassName("burger");
+let nav = document.querySelector("nav");
+let flou = document.querySelector(".flou");
+
+console.log(burger);
+console.log(nav);
+console.log(flou);
 
 const carousell = document.getElementById("carousell");
 let image = document.getElementsByClassName("image");
@@ -107,7 +114,12 @@ let trueImg = document.querySelectorAll("img");
 let synopsis = document.getElementById("text");
 
 let e = 0;
-let grande = 2;
+let grande = 0;
+if (window.matchMedia("(max-width: 840px)").matches) {
+  grande = 1;
+} else {
+  grande = 2;
+}
 
 for (let i = 0; i < anime.length; i++) {
   const carImage = document.createElement("div");
@@ -121,7 +133,7 @@ for (let i = 0; i < anime.length; i++) {
   const butt = document.createElement("section");
   butt.classList.add("button");
   carImage.appendChild(butt);
-  
+
   const buttOne = document.createElement("button");
   buttOne.classList.add("buttonPlus");
   buttOne.innerHTML = "⇠";
@@ -134,7 +146,7 @@ for (let i = 0; i < anime.length; i++) {
 
   const link = document.createElement("a");
   link.href = anime[i].link;
-  link.target = "blank"
+  link.target = "blank";
   carImage.appendChild(link);
 
   const carChange = document.createElement("img");
@@ -185,4 +197,16 @@ for (let i = 0; i < button.length; i++) {
     }
   });
 }
-  
+
+if (window.matchMedia("(max-width: 840px)").matches) {
+  burger[0].addEventListener("click", function () {
+    nav.style.transform = "translateX(0px)";
+    flou.style.display = "block";
+    flou.style.opacity = "0.3";
+  });
+  flou.addEventListener("click", function () {
+    nav.style.transform = "translateX(-30vw)";
+    flou.style.display = "none";
+    flou.style.opacity = "0";
+  });
+}
