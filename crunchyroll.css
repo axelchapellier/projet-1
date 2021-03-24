@@ -276,4 +276,7 @@ li {
     z-index: 100;
     transition: 1s;
   }
+  a{
+    font-size: 20px;
+  }
 }
