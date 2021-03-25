@@ -282,5 +282,9 @@ figure {
   display: flex;
   justify-content: center;
 }
+
+li {
+  height: 10vh;
+}
  
 }
